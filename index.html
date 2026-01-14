@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Official Bowiri Traditional Area Registration Portal</title>
-<link rel="stylesheet" href="assets/styles.css">
-<meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Landing.">
-<meta name="keywords" content="Bowiri Traditional Area, Registration, Landing">
-<meta property="og:title" content="Bowiri Traditional Area Registration Portal">
-<meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
-<meta property="og:image" content="assets/hero.jpg">
-<meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Official Bowiri Traditional Area Registration Portal</title>
+  <meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Clergy, Youth, Teacher, Trader, Clan Head, Assembly Member, or Elder.">
+  <meta name="keywords" content="Bowiri Traditional Area, Registration, Clergies, Clan Heads, Youth, Teachers, Traders, Assembly Members, Elders">
+  <meta property="og:title" content="Bowiri Traditional Area Registration Portal">
+  <meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
+  <meta property="og:image" content="assets/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f9fc; color:#1f2937; }
+    header { text-align:center; padding:40px 20px 20px; background:#2563eb; color:white; }
+    header img { height:60px; margin-bottom:15px; }
+    header h1 { margin:0; font-size:1.8rem; }
+    main { max-width:900px; margin:auto; padding:20px; }
+    .hero img { width:100%; max-height:350px; object-fit:cover; border-radius:10px; margin-bottom:20px; }
+    .category-grid { display:grid; grid-template-columns:1fr; gap:15px; }
+    @media(min-width:600px){ .category-grid { grid-template-columns:1fr 1fr; } }
+    @media(min-width:900px){ .category-grid { grid-template-columns:1fr 1fr 1fr; } }
+    .category-card { background:white; padding:20px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.08); text-align:center; transition: transform 0.2s; }
+    .category-card:hover { transform:translateY(-5px); }
+    .category-card a { text-decoration:none; color:#2563eb; font-weight:bold; display:block; font-size:1.1rem; margin-top:10px; }
+    footer { text-align:center; padding:20px; margin-top:40px; font-size:0.9rem; color:#6b7280; }
+  </style>
 </head>
 <body>
-<header>
-  <img src="assets/logo.png" alt="Logo" style="height:60px;">
-  <h1>Official Bowiri Traditional Area Registration Portal</h1>
-</header>
 
-<main>
-  <section class="hero">
-    <img src="assets/hero.jpg" alt="Hero banner" style="width:100%; height:auto;">
-  </section>
+  <header>
+    <img src="assets/logo.png" alt="Bowiri Logo">
+    <h1>Official Bowiri Traditional Area Registration Portal</h1>
+    <p>Choose your category to register. Each link opens the dedicated form page.</p>
+  </header>
 
-  <section class="form-section">
-    <h2>Landing Registration Form</h2>
-    <iframe src="YOUR_GOOGLE_FORM_URL_HERE?embedded=true" width="100%" height="1000px" style="border:0;"></iframe>
-    <p id="successMsg" style="display:none;">You have successfully registered!</p>
-  </section>
-  <a href="index.html">Home</a>
-</main>
+  <main>
+    <section class="hero">
+      <img src="assets/hero.jpg" alt="Hero banner">
+    </section>
 
-<footer>
-<p>Data Protection Act (Act 843) notice - Bowiri Traditional Area</p>
-</footer>
+    <section class="category-grid">
+      <div class="category-card">
+        <h3>Clergies</h3>
+        <a href="clergy.html">Go to Clergies Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Clan Heads</h3>
+        <a href="clan-heads.html">Go to Clan Heads Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Youth</h3>
+        <a href="youth.html">Go to Youth Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Teachers</h3>
+        <a href="teachers.html">Go to Teachers Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Traders / Marketers</h3>
+        <a href="traders.html">Go to Traders Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Assembly Members</h3>
+        <a href="assembly.html">Go to Assembly Members Form</a>
+      </div>
+      <div class="category-card">
+        <h3>Elders</h3>
+        <a href="elders.html">Go to Elders Form</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Bowiri Traditional Area | Data Protection Act (Act 843)
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
