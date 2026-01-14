@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: "Segoe UI", Arial;
+  background: #eef1f5;
+  padding: 60px 16px;
+}
+.box {
+  max-width: 380px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #198754;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.error {
+  display: none;
+  color: red;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h2>Admin Login</h2>
+  <input id="email" placeholder="Admin Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p class="error" id="errorMsg">Invalid login details</p>
+</div>
+
+<script>
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // CHANGE THESE
+  const ADMIN_EMAIL = "kimbon226@gmail.com";
+  const ADMIN_PASS = "Securepass1";
+
+  if (email === ADMIN_EMAIL && password === ADMIN_PASS) {
+    window.location.href = "dashboard.html";
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+  }
+}
+</script>
+</body>
+</html>

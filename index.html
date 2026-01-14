@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 50px; }
+    input, button { display: block; margin: 10px 0; padding: 8px; width: 300px; }
+    #successMsg { color: green; font-weight: bold; display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Registration Portal</h1>
+
+  <form id="regForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="date" name="dob" required>
+    <input type="text" name="occupation" placeholder="Occupation" required>
+    <input type="text" name="contact" placeholder="Contact Number" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="successMsg">You have successfully registered!</div>
+
+  <script>
+    const apiURL = "YOUR_DEPLOYED_WEB_APP_URL_HERE"; // Replace with your deployed Apps Script URL
+
+    document.getElementById("regForm").addEventListener("submit", async e => {
+      e.preventDefault();
+
+      const data = Object.fromEntries(new FormData(e.target));
+
+      try {
+        const res = await fetch(apiURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (result.status === "success") {
+          e.target.style.display = "none";
+          document.getElementById("successMsg").style.display = "block";
+        } else {
+          alert("Error: " + result.message);
+        }
+
+      } catch (err) {
+        alert("Submission failed: " + err);
+      }
+    });
+  </script>
+
+</body>
+</html>
