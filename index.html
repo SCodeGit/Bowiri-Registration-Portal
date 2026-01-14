@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registration Portal</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 50px; }
-    input, button { display: block; margin: 10px 0; padding: 8px; width: 300px; }
-    #successMsg { color: green; font-weight: bold; display: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bowiri Registration Portal</title>
+<style>
+  body { font-family: Arial; padding: 30px; max-width: 500px; margin: auto; }
+  input, button { display: block; width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+  #successMsg { color: green; font-weight: bold; display: none; margin-top: 20px; }
+</style>
 </head>
 <body>
 
-  <h1>Registration Portal</h1>
+<h1>Bowiri Registration Portal</h1>
 
-  <form id="regForm">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="date" name="dob" required>
-    <input type="text" name="occupation" placeholder="Occupation" required>
-    <input type="text" name="contact" placeholder="Contact Number" required>
-    <button type="submit">Submit</button>
-  </form>
+<form id="regForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="date" name="dob" required>
+  <input type="text" name="occupation" placeholder="Occupation" required>
+  <input type="text" name="contact" placeholder="Contact Number" required>
+  <button type="submit">Submit</button>
+</form>
 
-  <div id="successMsg">You have successfully registered!</div>
+<div id="successMsg">You have successfully registered! ✔</div>
 
-  <script>
-    const apiURL = "YOUR_DEPLOYED_WEB_APP_URL_HERE"; // Replace with your deployed Apps Script URL
+<script>
+const apiURL = "https://script.google.com/macros/s/AKfycbzZ-LwtjMfKIjjTyLqKakejmY1ifx11IPw_9GO-Dc6VddrBDklFjwOJq722pgXkG9iA/exec";
 
-    document.getElementById("regForm").addEventListener("submit", async e => {
-      e.preventDefault();
+document.getElementById("regForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-      const data = Object.fromEntries(new FormData(e.target));
+  // Collect form data
+  const data = Object.fromEntries(new FormData(this));
 
-      try {
-        const res = await fetch(apiURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-
-        const result = await res.json();
-
-        if (result.status === "success") {
-          e.target.style.display = "none";
-          document.getElementById("successMsg").style.display = "block";
-        } else {
-          alert("Error: " + result.message);
-        }
-
-      } catch (err) {
-        alert("Submission failed: " + err);
-      }
+  try {
+    // Send POST request as JSON
+    const res = await fetch(apiURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const result = await res.json();
+
+    if (result.status === "success") {
+      this.style.display = "none";
+      document.getElementById("successMsg").style.display = "block";
+    } else {
+      alert("Error: " + result.message);
+    }
+
+  } catch (error) {
+    alert("Submission failed: " + error);
+  }
+});
+</script>
 
 </body>
 </html>
