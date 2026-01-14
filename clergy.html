@@ -4,32 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIST OF CLERGIES</title>
+<link rel="stylesheet" href="assets/styles.css">
 <meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Clergy.">
 <meta name="keywords" content="Bowiri Traditional Area, Registration, Clergy">
-<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="Bowiri Traditional Area Registration Portal">
+<meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:type" content="website">
+
 <style>
   body {
+    margin:0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('assets/hero.jpg') center/cover no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #1f2937;
+    background: url('assets/hero.jpg') center/cover no-repeat fixed;
+    color:#1f2937;
   }
 
+  /* Overlay for readability */
   body::before {
     content:"";
     position: fixed;
     inset:0;
-    background: rgba(247,249,252,0.95); /* subtle overlay for readability */
+    background: rgba(247,249,252,0.85);
     z-index: -1;
   }
 
   header {
     text-align:center;
     padding:20px;
-    background: rgba(37,99,235,0.1);
   }
 
   header img {
@@ -44,54 +46,33 @@
   }
 
   main {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
   }
 
-  form {
-    background:white;
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px solid #2563eb;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  section.form-section {
+    background: rgba(255,255,255,0.95);
+    padding:20px;
+    border-radius:12px;
+    border:2px solid #2563eb;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-top:20px;
   }
 
-  form label {
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-  }
-
-  form input {
+  iframe {
     width:100%;
-    padding:10px;
-    margin-top:5px;
-    border-radius:6px;
-    border:1px solid #ccc;
-    font-size:1rem;
-  }
-
-  form button {
-    margin-top:20px;
-    padding:12px 20px;
-    font-size:1rem;
-    background:#2563eb;
-    color:white;
-    border:none;
+    border:0;
     border-radius:8px;
-    cursor:pointer;
-    transition: background 0.2s;
+    min-height:1000px;
   }
 
-  form button:hover { background:#1d4ed8; }
-
-  #successMsg {
-    display:none;
-    text-align:center;
-    margin-top:20px;
+  a.home-link {
+    display:inline-block;
+    margin-top:15px;
+    color:#2563eb;
+    text-decoration:none;
     font-weight:bold;
-    color:green;
   }
 
   footer {
@@ -102,12 +83,6 @@
     color:#6b7280;
   }
 
-  a.home-link {
-    display:inline-block;
-    margin-top:15px;
-    color:#2563eb;
-    text-decoration:none;
-  }
 </style>
 </head>
 <body>
@@ -118,28 +93,11 @@
 </header>
 
 <main>
-  <form id="regForm">
-    <label for="sn">S/N</label>
-    <input type="text" id="sn" name="sn" required>
-
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="community">Community (Bowiri)</label>
-    <input type="text" id="community" name="community" required>
-
-    <label for="denomination">Denomination</label>
-    <input type="text" id="denomination" name="denomination" required>
-
-    <label for="tel">Tel.</label>
-    <input type="text" id="tel" name="tel" required>
-
-    <label for="sign">Signature (optional)</label>
-    <input type="text" id="sign" name="sign">
-
-    <button type="submit">Submit</button>
-    <p id="successMsg">You have successfully registered!</p>
-  </form>
+  <section class="form-section">
+    <h2>Clergy Registration Form</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4aH-Iyy3HtrkvRDmUDXeG2Plu33DQ8bsrlCwq_cPKexXm7Q/viewform?usp=publish-editor&embedded=true"></iframe>
+    <p id="successMsg" style="display:none;">You have successfully registered!</p>
+  </section>
 
   <a class="home-link" href="index.html">Home</a>
 </main>
@@ -147,35 +105,6 @@
 <footer>
 <p>Data Protection Act (Act 843) notice - Bowiri Traditional Area</p>
 </footer>
-
-<script>
-const apiURL = "YOUR_APPS_SCRIPT_URL_HERE"; // replace with your Apps Script web app URL
-
-document.getElementById("regForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(e.target));
-
-  try {
-    const res = await fetch(apiURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-
-    if (result.status === "success") {
-      e.target.style.display = "none";
-      document.getElementById("successMsg").style.display = "block";
-    } else {
-      alert("Submission failed. Please try again.");
-    }
-  } catch(err) {
-    console.error(err);
-    alert("Submission failed. Check your internet connection.");
-  }
-});
-</script>
 
 </body>
 </html>
