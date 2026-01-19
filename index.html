@@ -12,72 +12,98 @@
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f9fc; color:#1f2937; }
-    header { text-align:center; padding:20px; }
-    header img { height:60px; margin-bottom:10px; }
-    header h1 { margin:0; font-size:1.8rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin:0; padding:0;
+      background:#f7f9fc;
+      color:#1f2937;
+    }
+
+    header {
+      text-align:center;
+      padding:15px;
+      background:#2563eb;
+      color:white;
+    }
+    header img { height:50px; margin-bottom:8px; }
+    header h1 { margin:0; font-size:1.5rem; }
+    header p { margin:5px 0 0; font-size:0.9rem; }
 
     .hero {
       position: relative;
       background: url('assets/hero.jpg') center/cover no-repeat;
-      height: 100vh;
+      min-height: 60vh; /* reduced height */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
-      padding: 20px;
+      padding: 15px;
     }
 
     .hero::before {
       content:"";
       position: absolute;
       inset:0;
-      background: rgba(0,0,0,0.4); /* dark overlay for readability */
+      background: rgba(0,0,0,0.4);
       z-index:1;
     }
 
     .category-grid {
       display: grid;
-      gap: 15px;
+      gap: 12px;
       position: relative;
       z-index:2;
       grid-template-columns: 1fr;
       width: 100%;
-      max-width: 900px;
-      margin-top: 30px;
+      max-width: 500px; /* narrower for mobile */
+      margin: 20px auto;
     }
 
-    @media(min-width:600px){ .category-grid { grid-template-columns:1fr 1fr; } }
-    @media(min-width:900px){ .category-grid { grid-template-columns:1fr 1fr 1fr; } }
+    @media(min-width:600px){ .category-grid { grid-template-columns:1fr 1fr; max-width:700px; } }
+    @media(min-width:900px){ .category-grid { grid-template-columns:1fr 1fr 1fr; max-width:900px; } }
 
     .category-card {
       background: rgba(255,255,255,0.95);
-      padding: 20px;
-      border-radius: 12px;
-      border: 2px solid #2563eb;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #2563eb;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       text-align:center;
       transition: transform 0.2s;
     }
+    .category-card:hover { transform: translateY(-3px); }
 
-    .category-card:hover { transform: translateY(-5px); }
+    .category-card h3 {
+      font-size: 1rem;
+      margin: 0;
+      color:#1f2937;
+    }
 
     .category-card a {
       text-decoration:none;
       color:#2563eb;
       font-weight:bold;
       display:block;
-      margin-top:10px;
-      font-size:1.1rem;
+      margin-top:8px;
+      font-size:0.95rem;
+      padding: 10px;
+      border-radius: 6px;
+      background: #f0f4ff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .category-card a:hover,
+    .category-card a:active {
+      background: #2563eb;
+      color: white;
     }
 
     footer {
       text-align:center;
-      padding:20px;
+      padding:15px;
       margin-top:20px;
-      font-size:0.9rem;
+      font-size:0.8rem;
       color:#6b7280;
       background:#f7f9fc;
     }
@@ -88,7 +114,7 @@
   <header>
     <img src="assets/logo.png" alt="Bowiri Logo">
     <h1>Official Bowiri Traditional Area Registration Portal</h1>
-    <p style="color:white; position:relative; z-index:2;">Select your category to register. Each link opens the dedicated form page.</p>
+    <p>Select your category to register.</p>
   </header>
 
   <main>
@@ -104,30 +130,30 @@
         </div>
         <div class="category-card">
           <h3>Youth</h3>
-          <a href="youth.html">Go to Youth Form</a>
+          <a href="youth.html"> Youth Form</a>
         </div>
         <div class="category-card">
           <h3>Teachers</h3>
-          <a href="teachers.html">Go to Teachers Form</a>
+          <a href="teachers.html"> Teachers Form</a>
         </div>
         <div class="category-card">
           <h3>Traders / Marketers</h3>
-          <a href="traders.html">Go to Traders Form</a>
+          <a href="traders.html">Traders Form</a>
         </div>
         <div class="category-card">
           <h3>Assembly Members</h3>
-          <a href="assembly.html">Go to Assembly Members Form</a>
+          <a href="assembly.html">Assembly Members Form</a>
         </div>
         <div class="category-card">
           <h3>Elders</h3>
-          <a href="elders.html">Go to Elders Form</a>
+          <a href="elders.html">Elders Form</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> Bowiri Traditional Area | Data Protection Act (Act 843)
+    &copy; <span id="year"></span> Bowiri Traditional Area 
   </footer>
 
   <script>
