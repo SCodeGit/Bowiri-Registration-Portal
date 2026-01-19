@@ -21,25 +21,25 @@
 
     header {
       text-align:center;
-      padding:15px;
+      padding:20px;
       background:#2563eb;
       color:white;
     }
-    header img { height:50px; margin-bottom:8px; }
-    header h1 { margin:0; font-size:1.5rem; }
-    header p { margin:5px 0 0; font-size:0.9rem; }
+    header img { height:60px; margin-bottom:10px; }
+    header h1 { margin:0; font-size:1.8rem; }
+    header p { margin:5px 0 0; font-size:1rem; }
 
     .hero {
       position: relative;
       background: url('assets/hero.jpg') center/cover no-repeat;
-      min-height: 60vh; /* reduced height */
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
-      padding: 15px;
+      padding: 20px;
     }
 
     .hero::before {
@@ -52,12 +52,12 @@
 
     .category-grid {
       display: grid;
-      gap: 12px;
+      gap: 15px;
       position: relative;
       z-index:2;
       grid-template-columns: 1fr;
       width: 100%;
-      max-width: 500px; /* narrower for mobile */
+      max-width: 600px;
       margin: 20px auto;
     }
 
@@ -66,7 +66,7 @@
 
     .category-card {
       background: rgba(255,255,255,0.95);
-      padding: 12px;
+      padding: 15px;
       border-radius: 8px;
       border: 1px solid #2563eb;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -76,7 +76,7 @@
     .category-card:hover { transform: translateY(-3px); }
 
     .category-card h3 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin: 0;
       color:#1f2937;
     }
@@ -86,7 +86,7 @@
       color:#2563eb;
       font-weight:bold;
       display:block;
-      margin-top:8px;
+      margin-top:10px;
       font-size:0.95rem;
       padding: 10px;
       border-radius: 6px;
@@ -103,7 +103,7 @@
       text-align:center;
       padding:15px;
       margin-top:20px;
-      font-size:0.8rem;
+      font-size:0.9rem;
       color:#6b7280;
       background:#f7f9fc;
     }
@@ -130,23 +130,23 @@
         </div>
         <div class="category-card">
           <h3>Youth</h3>
-          <a href="youth.html"> Youth Form</a>
+          <a href="youth.html">Go to Youth Form</a>
         </div>
         <div class="category-card">
           <h3>Teachers</h3>
-          <a href="teachers.html"> Teachers Form</a>
+          <a href="teachers.html">Go to Teachers Form</a>
         </div>
         <div class="category-card">
           <h3>Traders / Marketers</h3>
-          <a href="traders.html">Traders Form</a>
+          <a href="traders.html">Go to Traders Form</a>
         </div>
         <div class="category-card">
           <h3>Assembly Members</h3>
-          <a href="assembly.html">Assembly Members Form</a>
+          <a href="assembly.html">Go to Assembly Members Form</a>
         </div>
         <div class="category-card">
           <h3>Elders</h3>
-          <a href="elders.html">Elders Form</a>
+          <a href="elders.html">Go to Elders Form</a>
         </div>
       </div>
     </section>
@@ -157,6 +157,7 @@
   </footer>
 
   <script>
+    // Automatically set the current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
