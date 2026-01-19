@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIST OF CLAN HEADS</title>
 <link rel="stylesheet" href="assets/styles.css">
-<meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Clan Heads.">
+<meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as Clan Heads.">
 <meta name="keywords" content="Bowiri Traditional Area, Registration, Clan Heads">
 <meta property="og:title" content="Bowiri Traditional Area Registration Portal">
 <meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
@@ -25,14 +25,24 @@
 
   <section class="form-section">
     <h2>Clan Heads Registration Form</h2>
-    <iframe src="YOUR_GOOGLE_FORM_URL_HERE?embedded=true" width="100%" height="1000px" style="border:0;"></iframe>
-    <p id="successMsg" style="display:none;">You have successfully registered!</p>
+    <!-- Replace with your actual Google Form embed link -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSefxtJftMNPRRIIOYeTke-6ol3PBYaDzuTwUDoATGjtX2kiIA/viewform?embedded=true" 
+            width="100%" height="1000px" style="border:0;"></iframe>
+    <p id="successMsg" style="display:none;">✅ You have successfully registered!</p>
   </section>
-  <a href="index.html">Home</a>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="index.html" style="padding:10px 20px; background:#2563eb; color:#fff; text-decoration:none; border-radius:6px;">← Back to Home</a>
+  </div>
 </main>
 
 <footer>
-<p>Data Protection Act (Act 843) notice - Bowiri Traditional Area</p>
+  <p>&copy; <span id="year"></span> Bowiri Traditional Area</p>
 </footer>
+
+<script>
+  // Automatically set the current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
