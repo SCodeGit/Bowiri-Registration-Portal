@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIST OF ASSEMBLY MEMBERS</title>
 <link rel="stylesheet" href="assets/styles.css">
-<meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Assembly Members.">
+<meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as Assembly Members.">
 <meta name="keywords" content="Bowiri Traditional Area, Registration, Assembly Members">
 <meta property="og:title" content="Bowiri Traditional Area Registration Portal">
 <meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
@@ -25,14 +25,19 @@
 
   <section class="form-section">
     <h2>Assembly Members Registration Form</h2>
-    <iframe src="YOUR_GOOGLE_FORM_URL_HERE?embedded=true" width="100%" height="1000px" style="border:0;"></iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyLCmlUvGi9YTpyx7mCo4lbBcVh964c60fnSAjQp4QGR0O6g/viewform?embedded=true" width="100%" height="1000px" style="border:0;"></iframe>
     <p id="successMsg" style="display:none;">You have successfully registered!</p>
   </section>
   <a href="index.html">Home</a>
 </main>
 
 <footer>
-<p>Data Protection Act (Act 843) notice - Bowiri Traditional Area</p>
+  <p>&copy; <span id="year"></span> Bowiri Traditional Area</p>
 </footer>
+
+<script>
+  // Automatically set the current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
