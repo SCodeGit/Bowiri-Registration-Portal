@@ -3,167 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Official Bowiri Traditional Area Registration Portal</title>
-  <meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as a Clergy, Youth, Teacher, Trader, Clan Head,Chiefs and Queenmothers, Assembly Member, or Elder.">
-  <meta name="keywords" content="Bowiri Traditional Area, Registration, Clergies, Clan Heads, Youth, Teachers, Traders, Assembly Members, Elders">
+
+  <meta name="description" content="Official Bowiri Traditional Area Registration Portal — Register as Clergy, Youth, Teacher, Trader, Clan Head, Chief, Queen Mother, Assembly Member, or Elder.">
+  <meta name="keywords" content="Bowiri Traditional Area, Registration, Clergy, Clan Heads, Youth, Teachers, Traders, Chiefs, Queen Mothers, Assembly Members, Elders">
+
   <meta property="og:title" content="Bowiri Traditional Area Registration Portal">
   <meta property="og:description" content="Register for your category in the Bowiri Traditional Area. Fill out the relevant form to be listed officially.">
   <meta property="og:image" content="assets/hero.jpg">
   <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="assets/styles.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin:0; padding:0;
-      background:#f7f9fc;
-      color:#1f2937;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+      color: #1f2937;
     }
 
     header {
-      text-align:center;
-      padding:20px;
-      background:#2563eb;
-      color:white;
+      text-align: center;
+      padding: 20px;
+      background: #2563eb;
+      color: #fff;
     }
-    header img { height:60px; margin-bottom:10px; }
-    header h1 { margin:0; font-size:1.8rem; }
-    header p { margin:5px 0 0; font-size:1rem; }
+
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1rem;
+    }
 
     .hero {
       position: relative;
       background: url('assets/hero.jpg') center/cover no-repeat;
       min-height: 60vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      color: white;
       padding: 20px;
     }
 
     .hero::before {
-      content:"";
+      content: "";
       position: absolute;
-      inset:0;
-      background: rgba(0,0,0,0.4);
-      z-index:1;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
     }
 
     .category-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       gap: 15px;
-      position: relative;
-      z-index:2;
-      grid-template-columns: 1fr;
       width: 100%;
-      max-width: 600px;
-      margin: 20px auto;
+      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
-    @media(min-width:600px){ .category-grid { grid-template-columns:1fr 1fr; max-width:700px; } }
-    @media(min-width:900px){ .category-grid { grid-template-columns:1fr 1fr 1fr; max-width:900px; } }
-
     .category-card {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       padding: 15px;
       border-radius: 8px;
       border: 1px solid #2563eb;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      text-align:center;
-      transition: transform 0.2s;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
     }
-    .category-card:hover { transform: translateY(-3px); }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+    }
 
     .category-card h3 {
-      font-size: 1.1rem;
       margin: 0;
-      color:#1f2937;
+      font-size: 1.1rem;
     }
 
     .category-card a {
-      text-decoration:none;
-      color:#2563eb;
-      font-weight:bold;
-      display:block;
-      margin-top:10px;
-      font-size:0.95rem;
+      display: block;
+      margin-top: 10px;
       padding: 10px;
-      border-radius: 6px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
       background: #f0f4ff;
+      border-radius: 6px;
       transition: background 0.2s, color 0.2s;
     }
-    .category-card a:hover,
-    .category-card a:active {
+
+    .category-card a:hover {
       background: #2563eb;
-      color: white;
+      color: #fff;
     }
 
     footer {
-      text-align:center;
-      padding:15px;
-      margin-top:20px;
-      font-size:0.9rem;
-      color:#6b7280;
-      background:#f7f9fc;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #6b7280;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="assets/logo.png" alt="Bowiri Logo">
-    <h1>Official Bowiri Traditional Area Registration Portal</h1>
-    <p>Select your category to register.</p>
-  </header>
+<header>
+  <img src="assets/logo.png" alt="Bowiri Logo">
+  <h1>Official Bowiri Traditional Area Registration Portal</h1>
+  <p>Select your category to register</p>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="category-grid">
-        <div class="category-card">
-          <h3>Clergies</h3>
-           <div class="category-card">
-          <h3>Elders</h3>
-          <a href="elders.html">Go to Elders Form</a>
-        </div>
-            <div class="category-card">
-          <h3>Elders</h3>
-          <a href="chiefs and Queenmothers.html">Go to Chief and Queenmothers Form</a>
-        </div>
-          <a href="clergy.html">Go to Clergies Form</a>
-        </div>
-        <div class="category-card">
-          <h3>Clan Heads</h3>
-          <a href="clan-heads.html">Go to Clan Heads Form</a>
-        </div>
-        <div class="category-card">
-          <h3>Youth</h3>
-          <a href="youth.html">Go to Youth Form</a>
-        </div>
-        <div class="category-card">
-          <h3>Teachers</h3>
-          <a href="teachers.html">Go to Teachers Form</a>
-        </div>
-        <div class="category-card">
-          <h3>Traders / Marketers</h3>
-          <a href="traders.html">Go to Traders Form</a>
-        </div>
-        <div class="category-card">
-          <h3>Assembly Members</h3>
-          <a href="assembly.html">Go to Assembly Members Form</a>
-        </div>
+<main>
+  <section class="hero">
+    <div class="category-grid">
+
+      <div class="category-card">
+        <h3>Clergy</h3>
+        <a href="clergy.html">Go to Clergy Form</a>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    &copy; <span id="year"></span> Bowiri Traditional Area 
-  </footer>
+      <div class="category-card">
+        <h3>Elders</h3>
+        <a href="elders.html">Go to Elders Form</a>
+      </div>
 
-  <script>
-    // Automatically set the current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+      <div class="category-card">
+        <h3>Chiefs & Queen Mothers</h3>
+        <a href="chiefs-queenmothers.html">Go to Chiefs & Queen Mothers Form</a>
+      </div>
+
+      <div class="category-card">
+        <h3>Clan Heads</h3>
+        <a href="clan-heads.html">Go to Clan Heads Form</a>
+      </div>
+
+      <div class="category-card">
+        <h3>Youth</h3>
+        <a href="youth.html">Go to Youth Form</a>
+      </div>
+
+      <div class="category-card">
+        <h3>Teachers</h3>
+        <a href="teachers.html">Go to Teachers Form</a>
+      </div>
+
+      <div class="category-card">
+        <h3>Traders / Marketers</h3>
+        <a href="traders.html">Go to Traders Form</a>
+      </div>
+
+      <div class="category-card">
+        <h3>Assembly Members</h3>
+        <a href="assembly.html">Go to Assembly Members Form</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Bowiri Traditional Area
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
