@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YOUTH NETWORK</title>
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<meta name="description" content="Official Bowiri Traditional Area Youth Network Registration Portal. Register as a member of the Youth Network.">
+
+<meta name="keywords" content="Bowiri Traditional Area, Youth Network, Registration, Youth">
+
+<meta property="og:title" content="Bowiri Traditional Area Youth Network Registration">
+
+<meta property="og:description" content="Join the Bowiri Traditional Area Youth Network by completing the registration form.">
+
+<meta property="og:image" content="assets/hero.jpg">
+
+<meta property="og:type" content="website">
+
+</head>
+
+<body>
+
+<header>
+    <img src="assets/logo.png" alt="Bowiri Traditional Area Logo" style="height:60px;">
+    <h1>YOUTH NETWORK</h1>
+</header>
+
+<main>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="assets/hero.jpg" alt="Youth Network Banner" style="width:100%; height:auto;">
+    </section>
+
+    <!-- Registration Form -->
+    <section class="form-section">
+
+        <h2>Youth Network Registration Form</h2>
+
+        <p style="text-align:center; font-size:18px; margin-bottom:20px;">
+            Kindly complete the registration form below.
+        </p>
+
+        <div style="max-width:700px; margin:auto; background:#f8f9fa; padding:20px; border-radius:10px; margin-bottom:25px;">
+            <h3 style="margin-top:0; color:#2563eb;">Required Information</h3>
+
+            <ul style="line-height:2;">
+                <li>👤 Full Name</li>
+                <li>🌍 Region</li>
+                <li>🏡 Town</li>
+                <li>💼 Occupation</li>
+                <li>📞 Phone Number</li>
+            </ul>
+        </div>
+
+        <!-- Google Form -->
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfKji0JTo1kniTQZ81gvlGQPwE12f4KW0FZ9YnpsCf-O6AhEw/viewform?embedded=true"
+            width="100%"
+            height="1000"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            style="border:0;">
+            Loading…
+        </iframe>
+
+        <p id="successMsg" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:20px;">
+            ✅ You have successfully registered!
+        </p>
+
+    </section>
+
+    <!-- Back Button -->
+    <div style="text-align:center; margin-top:30px;">
+        <a href="index.html"
+           style="
+                display:inline-block;
+                padding:12px 25px;
+                background:#2563eb;
+                color:#fff;
+                text-decoration:none;
+                border-radius:8px;
+                font-weight:bold;
+           ">
+            ← Back to Home
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> Bowiri Traditional Area. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Automatically display the current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
